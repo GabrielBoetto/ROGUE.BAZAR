@@ -168,3 +168,43 @@ footer {
   font-size: 0.9rem;
   border-top: 1px solid #2c2c2c;
 }
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .btn, input[type="submit"] {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .section, .contacto {
+    padding: 2rem 1rem;
+  }
+
+  .product {
+    padding: 1.5rem;
+  }
+
+  header img {
+    max-width: 140px;
+  }
+
+  .whatsapp {
+    width: 100%;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  input, textarea {
+    font-size: 0.95rem;
+    padding: 0.9rem;
+  }
+}
