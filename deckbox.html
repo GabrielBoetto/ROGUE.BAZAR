@@ -27,18 +27,18 @@
     <h2>Deckbox Vertical Premium</h2>
 
     <!-- Imagen principal -->
-    <img id="img-main" src="./multimedia/deckbox-rojo-1.jpg" alt="Deckbox Vertical Premium" style="max-width: 100%; border-radius: 12px;" />
+    <img id="img-main" src="./multimedia/roja/71I7aKBOixL._AC_SL1500_.jpg" alt="Deckbox Vertical Premium" style="max-width: 100%; border-radius: 12px;" />
 
     <!-- Miniaturas -->
     <div class="thumbnails" style="margin-top: 1rem; display: flex; gap: 1rem;">
-      <img id="img-thumb-1" src="./multimedia/deckbox-rojo-2.jpg" alt="Vista lateral Deckbox rojo" style="width: 120px; cursor: pointer; border-radius: 8px; border: 2px solid var(--accent);" />
-      <img id="img-thumb-2" src="./multimedia/deckbox-rojo-3.jpg" alt="Interior Deckbox rojo" style="width: 120px; cursor: pointer; border-radius: 8px; border: 2px solid var(--accent);" />
+      <img id="img-thumb-1" src="./multimedia/roja/71iZPln7gfL._AC_SL1500_.jpg" alt="Vista lateral Deckbox rojo" style="width: 120px; cursor: pointer; border-radius: 8px; border: 2px solid var(--accent);" />
+      <img id="img-thumb-2" src="./multimedia/roja/71ULjREkoqL._AC_SL1500_.jpg" alt="Interior Deckbox rojo" style="width: 120px; cursor: pointer; border-radius: 8px; border: 2px solid var(--accent);" />
     </div>
 
     <label for="color-select" style="display:block; margin-top: 2rem; font-weight: bold; font-family: 'MedievalSharp', cursive; color: var(--accent);">Elegí el color:</label>
     <select id="color-select" style="padding: 0.7rem; font-size: 1rem; border-radius: 8px; border:none; background-color: var(--bg-card); color: var(--text-light);">
-      <option value="rojo">Rojo</option>
-      <option value="negro">Negro</option>
+      <option value="roja">Rojo</option>
+      <option value="negra">Negro</option>
       <option value="azul">Azul</option>
     </select>
 
@@ -74,30 +74,22 @@
       alert("¡Gracias por tu interés! Te contactaremos pronto.");
     });
 
-    // Imágenes para cada color
+    // Imágenes para cada color - rutas completas
     const imagesByColor = {
-      rojo: [
+      roja: [
         './multimedia/roja/71I7aKBOixL._AC_SL1500_.jpg',
         './multimedia/roja/71iZPln7gfL._AC_SL1500_.jpg',
-        './multimedia/roja/71ULjREkoqL._AC_SL1500_.jpg',
-        './multimedia/roja/81gRgk5UnAL._AC_SL1500_.jpg',
-        './multimedia/roja/81HD-poWfeL._AC_SL1500_.jpg',
-        './multimedia/roja/81q63DK43bL._AC_SL1500_.jpg',
-        './multimedia/roja/81vcQR+6IgL._AC_SL1500_.jpg'
-
-
-
-
+        './multimedia/roja/71ULjREkoqL._AC_SL1500_.jpg'
       ],
-      negro: [
-        'deckbox-negro-1.jpg',
-        'deckbox-negro-2.jpg',
-        'deckbox-negro-3.jpg'
+      negra: [
+        './multimedia/negra/deckbox-negro-1.jpg',
+        './multimedia/negra/deckbox-negro-2.jpg',
+        './multimedia/negra/deckbox-negro-3.jpg'
       ],
       azul: [
-        'deckbox-azul-1.jpg',
-        'deckbox-azul-2.jpg',
-        'deckbox-azul-3.jpg'
+        './multimedia/azul/deckbox-azul-1.jpg',
+        './multimedia/azul/deckbox-azul-2.jpg',
+        './multimedia/azul/deckbox-azul-3.jpg'
       ]
     };
 
@@ -110,12 +102,12 @@
       const color = colorSelect.value;
       const imgs = imagesByColor[color];
 
-      imgMain.src = `./multimedia/${imgs[0]}`;
-      imgThumb1.src = `./multimedia/${imgs[1]}`;
-      imgThumb2.src = `./multimedia/${imgs[2]}`;
+      imgMain.src = imgs[0];
+      imgThumb1.src = imgs[1];
+      imgThumb2.src = imgs[2];
     });
 
-    // Opcional: hacer que clic en miniaturas cambie imagen principal
+    // Miniaturas que cambian la imagen principal al click
     [imgThumb1, imgThumb2].forEach((thumb) => {
       thumb.style.cursor = 'pointer';
       thumb.addEventListener('click', () => {
