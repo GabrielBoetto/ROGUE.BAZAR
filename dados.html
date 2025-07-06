@@ -30,15 +30,18 @@
       Dados temáticos D7, ideales para D&D y otros sistemas. Sets de 7 dados con diseño especial y guardado seguro.
     </p>
 
-    <div class="gallery-container">
-      <img src="./multimedia/dados/Chaos Magma.jpg" alt="Dado 1" />
-      <img src="./multimedia/dados/Chaos Netherworld.jpg" alt="Dado 2" />
-      <img src="./multimedia/dados/Dazzling white.jpg" alt="Dado 3" />
+    <!-- Imagen principal -->
+    <img id="img-main" src="./multimedia/dados/Chaos Magma.jpg" alt="Set de Dados" class="img-main" />
+
+    <!-- Galería de miniaturas -->
+    <div class="gallery-container" id="gallery">
+      <img src="./multimedia/dados/Chaos Netherworld.jpg" alt="Dado 1" class="active" />
+      <img src="./multimedia/dados/Dazzling white.jpg" alt="Dado 2" />
       <img src="./multimedia/dados/Demon Flame.jpg" alt="Dado 3" />
-      <img src="./multimedia/dados/Mirage Purple.png" alt="Dado 3" />
-      <img src="./multimedia/dados/Rusted Bronze.jpg" alt="Dado 3" />
-      <img src="./multimedia/dados//Star River.jpg" alt="Dado 3" />
-      <!-- Agregá aquí más imágenes -->
+      <img src="./multimedia/dados/Mirage Purple.png" alt="Dado 4" />
+      <img src="./multimedia/dados/Rusted Bronze.jpg" alt="Dado 5" />
+      <img src="./multimedia/dados/Star River.jpg" alt="Dado 6" />
+      <!-- Podés seguir agregando imágenes -->
     </div>
   </section>
 
@@ -62,17 +65,29 @@
     <p>© 2025 El Bazar del Rogue - Todos los derechos reservados.</p>
   </footer>
 
-  <script src="gallery.js"></script>
   <script>
+    // Formulario - alerta demo
     document.getElementById('formulario').addEventListener('submit', function (e) {
       e.preventDefault();
       alert("¡Gracias por tu interés! Te contactaremos pronto.");
     });
+
+    // Galería: cambiar imagen principal
+    const imgMain = document.getElementById('img-main');
+    const gallery = document.getElementById('gallery');
+    const thumbnails = gallery.querySelectorAll('img');
+
+    thumbnails.forEach((thumb) => {
+      thumb.addEventListener('click', () => {
+        imgMain.src = thumb.src;
+
+        // Quitar clase active de todos
+        thumbnails.forEach(t => t.classList.remove('active'));
+        // Agregar clase active al clickeado
+        thumb.classList.add('active');
+      });
+    });
   </script>
-  <!-- Lightbox para ampliar imagen -->
-<div id="lightbox-overlay">
-  <img src="" alt="Imagen ampliada" />
-</div>
 
 </body>
 </html>
