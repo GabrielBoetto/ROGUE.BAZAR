@@ -122,7 +122,6 @@ header p {
 }
 
 /* Formulario y contacto */
-
 .contacto {
   background-color: #1a1a1a;
   padding: 3rem 2rem;
@@ -176,7 +175,6 @@ input[type="submit"]:hover, .btn:hover {
 }
 
 /* WhatsApp button */
-
 .whatsapp {
   margin-top: 1rem;
   display: inline-block;
@@ -195,7 +193,6 @@ input[type="submit"]:hover, .btn:hover {
 }
 
 /* Footer */
-
 footer {
   text-align: center;
   padding: 2rem 1rem;
@@ -210,19 +207,27 @@ select {
   max-width: 250px;
 }
 
+/* Product description */
 .product-description {
   margin-top: 1.5rem;
   color: var(--text-muted);
   font-size: 1.1rem;
   max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* Imagen principal de producto (galería) */
 .img-main {
-  max-width: 100%;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
   border-radius: 12px;
-  margin-top: 1rem;
+  margin: 1rem auto 0 auto;
+  display: block;
 }
 
+/* Contenedor de miniaturas (galería) */
 .gallery-container {
   margin-top: 1rem;
   display: flex;
@@ -232,6 +237,7 @@ select {
   border-bottom: 2px solid var(--accent);
 }
 
+/* Miniaturas */
 .gallery-container img {
   width: 120px;
   height: auto;
@@ -246,9 +252,7 @@ select {
   border-color: #f0c75e; /* color destacado para imagen activa */
 }
 
-
 /* Responsive */
-
 @media (max-width: 768px) {
   h1 {
     font-size: 1.7rem;
@@ -296,5 +300,14 @@ select {
 
   .menu .nav-link {
     font-size: 1rem;
+  }
+
+  /* Galería miniaturas más pequeñas en móviles */
+  .gallery-container img {
+    width: 80px;
+  }
+
+  .img-main {
+    max-width: 100%;
   }
 }
