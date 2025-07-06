@@ -26,25 +26,24 @@
   <section class="section">
     <h2>Deckbox Vertical Premium</h2>
 
-    <!-- Imagen principal -->
-    <img id="img-main" src="./multimedia/roja/71I7aKBOixL._AC_SL1500_.jpg" alt="Deckbox Vertical Premium" style="max-width: 100%; border-radius: 12px;" />
-
-    <!-- Miniaturas -->
-    <div class="thumbnails" style="margin-top: 1rem; display: flex; gap: 1rem;">
-      <img id="img-thumb-1" src="./multimedia/roja/71iZPln7gfL._AC_SL1500_.jpg" alt="Vista lateral Deckbox rojo" style="width: 120px; cursor: pointer; border-radius: 8px; border: 2px solid var(--accent);" />
-      <img id="img-thumb-2" src="./multimedia/roja/71ULjREkoqL._AC_SL1500_.jpg" alt="Interior Deckbox rojo" style="width: 120px; cursor: pointer; border-radius: 8px; border: 2px solid var(--accent);" />
-    </div>
-
-    <label for="color-select" style="display:block; margin-top: 2rem; font-weight: bold; font-family: 'MedievalSharp', cursive; color: var(--accent);">Elegí el color:</label>
-    <select id="color-select" style="padding: 0.7rem; font-size: 1rem; border-radius: 8px; border:none; background-color: var(--bg-card); color: var(--text-light);">
-      <option value="roja">Rojo</option>
-      <option value="negra">Negro</option>
-      <option value="azul">Azul</option>
-    </select>
-
-    <p style="margin-top: 1.5rem; color: var(--text-muted); font-size: 1.1rem;">
+    <p class="product-description">
       Diseño rígido, capacidad para más de 100 cartas enfundadas. Ideal para juego casual, torneos y colección.
+      Materiales resistentes y acabado profesional para proteger tus cartas con estilo.
     </p>
+
+    <!-- Imagen principal -->
+    <img id="img-main" src="./multimedia/roja/71I7aKBOixL._AC_SL1500_.jpg" alt="Deckbox Vertical Premium" class="img-main" />
+
+    <!-- Galería con muchas miniaturas -->
+    <div class="gallery-container" id="gallery">
+      <img src="./multimedia/roja/71iZPln7gfL._AC_SL1500_.jpg" alt="Vista lateral Deckbox" class="active" />
+      <img src="./multimedia/roja/71ULjREkoqL._AC_SL1500_.jpg" alt="Interior Deckbox" />
+      <img src="./multimedia/roja/81gRgk5UnAL._AC_SL1500_.jpg" alt="Otra vista Deckbox" />
+      <img src="./multimedia/roja/81HD-poWfeL._AC_SL1500_.jpg" alt="Deckbox ángulo" />
+      <img src="./multimedia/roja/81q63DK43bL._AC_SL1500_.jpg" alt="Detalle Deckbox" />
+      <img src="./multimedia/roja/81vcQR+6IgL._AC_SL1500_.jpg" alt="Deckbox abierto" />
+      <!-- Agregá más imágenes aquí -->
+    </div>
   </section>
 
   <section class="section contacto" id="contacto">
@@ -68,50 +67,25 @@
   </footer>
 
   <script>
-    // Formulario - solo alert para demo
+    // Formulario - alerta demo
     document.getElementById('formulario').addEventListener('submit', function (e) {
       e.preventDefault();
       alert("¡Gracias por tu interés! Te contactaremos pronto.");
     });
 
-    // Imágenes para cada color - rutas completas
-    const imagesByColor = {
-      roja: [
-        './multimedia/roja/71I7aKBOixL._AC_SL1500_.jpg',
-        './multimedia/roja/71iZPln7gfL._AC_SL1500_.jpg',
-        './multimedia/roja/71ULjREkoqL._AC_SL1500_.jpg'
-      ],
-      negra: [
-        './multimedia/negra/deckbox-negro-1.jpg',
-        './multimedia/negra/deckbox-negro-2.jpg',
-        './multimedia/negra/deckbox-negro-3.jpg'
-      ],
-      azul: [
-        './multimedia/azul/deckbox-azul-1.jpg',
-        './multimedia/azul/deckbox-azul-2.jpg',
-        './multimedia/azul/deckbox-azul-3.jpg'
-      ]
-    };
-
-    const colorSelect = document.getElementById('color-select');
+    // Cambiar imagen principal al clickear miniatura
     const imgMain = document.getElementById('img-main');
-    const imgThumb1 = document.getElementById('img-thumb-1');
-    const imgThumb2 = document.getElementById('img-thumb-2');
+    const gallery = document.getElementById('gallery');
+    const thumbnails = gallery.querySelectorAll('img');
 
-    colorSelect.addEventListener('change', () => {
-      const color = colorSelect.value;
-      const imgs = imagesByColor[color];
-
-      imgMain.src = imgs[0];
-      imgThumb1.src = imgs[1];
-      imgThumb2.src = imgs[2];
-    });
-
-    // Miniaturas que cambian la imagen principal al click
-    [imgThumb1, imgThumb2].forEach((thumb) => {
-      thumb.style.cursor = 'pointer';
+    thumbnails.forEach((thumb) => {
       thumb.addEventListener('click', () => {
         imgMain.src = thumb.src;
+
+        // Quitar clase active de todos
+        thumbnails.forEach(t => t.classList.remove('active'));
+        // Agregar clase active al clickeado
+        thumb.classList.add('active');
       });
     });
   </script>
