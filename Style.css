@@ -100,11 +100,14 @@ header p {
 }
 
 .product img {
-  width: 200px;
+  width: 180px;
   height: auto;
+  max-height: 180px;
   object-fit: cover;
   border-right: 1px solid #2c2c2c;
+  flex-shrink: 0;
 }
+
 
 .product-content {
   padding: 1.5rem;
