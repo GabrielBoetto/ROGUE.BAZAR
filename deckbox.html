@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Deckbox Vertical Premium - El Bazar del Rogue</title>
+  <title>Deckbox - El Bazar del Rogue</title>
   <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet" />
   <link rel="icon" href="./multimedia/android-chrome-192x192.png" type="image/png" />
   <link rel="stylesheet" href="Style.css" />
@@ -12,7 +12,7 @@
 
   <header>
     <img src="./multimedia/el bazar del rogue 3.png" alt="El Bazar del Rogue" />
-    <h1>Deckbox Vertical Premium</h1>
+    <h1>El Bazar del Rogue</h1>
     <p>Tu tienda TCG & Rol en Argentina</p>
 
     <nav class="menu">
@@ -25,39 +25,104 @@
 
   <section class="section">
     <h2>Deckbox Vertical Premium</h2>
-    
-    <img id="product-image" src="./multimedia/deckbox-rojo.jpg" alt="Deckbox Vertical Premium" />
-  
-    <label for="color-select">Elegí el color:</label>
-    <select id="color-select">
-      <option value="deckbox-rojo.jpg">Rojo</option>
-      <option value="deckbox-negro.jpg">Negro</option>
-      <option value="deckbox-azul.jpg">Azul</option>
-    </select>
-  
-    <p>Descripción detallada del Deckbox y sus ventajas...</p>
-  </section>
-  
 
-    <a href="index.html" class="btn">Volver al Inicio</a>
+    <!-- Imagen principal -->
+    <img id="img-main" src="./multimedia/deckbox-rojo-1.jpg" alt="Deckbox Vertical Premium" style="max-width: 100%; border-radius: 12px;" />
+
+    <!-- Miniaturas -->
+    <div class="thumbnails" style="margin-top: 1rem; display: flex; gap: 1rem;">
+      <img id="img-thumb-1" src="./multimedia/deckbox-rojo-2.jpg" alt="Vista lateral Deckbox rojo" style="width: 120px; cursor: pointer; border-radius: 8px; border: 2px solid var(--accent);" />
+      <img id="img-thumb-2" src="./multimedia/deckbox-rojo-3.jpg" alt="Interior Deckbox rojo" style="width: 120px; cursor: pointer; border-radius: 8px; border: 2px solid var(--accent);" />
+    </div>
+
+    <label for="color-select" style="display:block; margin-top: 2rem; font-weight: bold; font-family: 'MedievalSharp', cursive; color: var(--accent);">Elegí el color:</label>
+    <select id="color-select" style="padding: 0.7rem; font-size: 1rem; border-radius: 8px; border:none; background-color: var(--bg-card); color: var(--text-light);">
+      <option value="rojo">Rojo</option>
+      <option value="negro">Negro</option>
+      <option value="azul">Azul</option>
+    </select>
+
+    <p style="margin-top: 1.5rem; color: var(--text-muted); font-size: 1.1rem;">
+      Diseño rígido, capacidad para más de 100 cartas enfundadas. Ideal para juego casual, torneos y colección.
+    </p>
+  </section>
+
+  <section class="section contacto" id="contacto">
+    <h2>¿Querés comprar?</h2>
+    <p>Contactanos por WhatsApp para concretar la compra o transferencia directa.</p>
+
+    <a href="https://wa.me/5493518073587" target="_blank" class="whatsapp">Hablar por WhatsApp</a>
+
+    <p style="margin-top:2rem">O completá este formulario para que te contactemos:</p>
+
+    <form id="formulario">
+      <input type="text" placeholder="Tu nombre" required />
+      <input type="email" placeholder="Tu email" />
+      <textarea placeholder="¿Qué productos te interesan?"></textarea>
+      <input type="submit" value="Enviar consulta" class="btn" />
+    </form>
   </section>
 
   <footer>
     <p>© 2025 El Bazar del Rogue - Todos los derechos reservados.</p>
   </footer>
 
-  <script src="script.js"></script>
   <script>
-    const deckboxColors = {
-      color1: './multimedia/base.jpg',
-      color2: './multimedia/deckbox-color2.jpg',
-      color3: './multimedia/deckbox-color3.jpg'
+    // Formulario - solo alert para demo
+    document.getElementById('formulario').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert("¡Gracias por tu interés! Te contactaremos pronto.");
+    });
+
+    // Imágenes para cada color
+    const imagesByColor = {
+      rojo: [
+        './multimedia/roja/71I7aKBOixL._AC_SL1500_.jpg',
+        './multimedia/roja/71iZPln7gfL._AC_SL1500_.jpg',
+        './multimedia/roja/71ULjREkoqL._AC_SL1500_.jpg',
+        './multimedia/roja/81gRgk5UnAL._AC_SL1500_.jpg',
+        './multimedia/roja/81HD-poWfeL._AC_SL1500_.jpg',
+        './multimedia/roja/81q63DK43bL._AC_SL1500_.jpg',
+        './multimedia/roja/81vcQR+6IgL._AC_SL1500_.jpg'
+
+
+
+
+      ],
+      negro: [
+        'deckbox-negro-1.jpg',
+        'deckbox-negro-2.jpg',
+        'deckbox-negro-3.jpg'
+      ],
+      azul: [
+        'deckbox-azul-1.jpg',
+        'deckbox-azul-2.jpg',
+        'deckbox-azul-3.jpg'
+      ]
     };
-    const deckboxImg = document.getElementById('deckbox-img');
-    const deckboxSelect = document.getElementById('deckbox-colores');
-    deckboxSelect.addEventListener('change', () => {
-      deckboxImg.src = deckboxColors[deckboxSelect.value];
+
+    const colorSelect = document.getElementById('color-select');
+    const imgMain = document.getElementById('img-main');
+    const imgThumb1 = document.getElementById('img-thumb-1');
+    const imgThumb2 = document.getElementById('img-thumb-2');
+
+    colorSelect.addEventListener('change', () => {
+      const color = colorSelect.value;
+      const imgs = imagesByColor[color];
+
+      imgMain.src = `./multimedia/${imgs[0]}`;
+      imgThumb1.src = `./multimedia/${imgs[1]}`;
+      imgThumb2.src = `./multimedia/${imgs[2]}`;
+    });
+
+    // Opcional: hacer que clic en miniaturas cambie imagen principal
+    [imgThumb1, imgThumb2].forEach((thumb) => {
+      thumb.style.cursor = 'pointer';
+      thumb.addEventListener('click', () => {
+        imgMain.src = thumb.src;
+      });
     });
   </script>
+
 </body>
 </html>
