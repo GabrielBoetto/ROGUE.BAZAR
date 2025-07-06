@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Set de Dados de Rol - El Bazar del Rogue</title>
+  <title>Dados - El Bazar del Rogue</title>
   <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet" />
   <link rel="icon" href="./multimedia/android-chrome-192x192.png" type="image/png" />
   <link rel="stylesheet" href="Style.css" />
@@ -12,7 +12,7 @@
 
   <header>
     <img src="./multimedia/el bazar del rogue 3.png" alt="El Bazar del Rogue" />
-    <h1>Set de Dados de Rol</h1>
+    <h1>El Bazar del Rogue</h1>
     <p>Tu tienda TCG & Rol en Argentina</p>
 
     <nav class="menu">
@@ -25,35 +25,50 @@
 
   <section class="section">
     <h2>Set de Dados de Rol</h2>
-    <img id="dados-img" src="./multimedia/Mirage Purple.png" alt="Set de Dados de Rol" style="max-width:400px; width:100%; border-radius:12px; margin-bottom:1.5rem;" />
 
-    <p>Set temático de dados D7, ideal para D&D y otros sistemas. Incluye 7 unidades por set y almacenamiento especial con diseño místico.</p>
+    <img id="img-main" class="img-main" src="./multimedia/dados/dado-1.jpg" alt="Set de Dados de Rol" />
 
-    <label for="dados-colores" style="color: var(--accent); font-weight: bold; margin-top:1.5rem; display:block;">Elegí un color:</label>
-    <select id="dados-colores" style="padding:0.6rem; border-radius:10px; border:none; background:#2c2c2c; color: var(--text-light); font-size:1rem; margin-bottom:2rem; width: max-content; cursor:pointer;">
-      <option value="color1" selected>Púrpura</option>
-      <option value="color2">Rojo</option>
-      <option value="color3">Negro</option>
-    </select>
+    <p class="product-description">
+      Dados temáticos D7, ideales para D&D y otros sistemas. Sets de 7 dados con diseño especial y guardado seguro.
+    </p>
 
-    <a href="index.html" class="btn">Volver al Inicio</a>
+    <div class="gallery-container">
+      <img src="./multimedia/dados/Chaos Magma.jpg" alt="Dado 1" />
+      <img src="./multimedia/dados/Chaos Netherworld.jpg" alt="Dado 2" />
+      <img src="./multimedia/dados/Dazzling white.jpg" alt="Dado 3" />
+      <img src="./multimedia/dados/Demon Flame.jpg" alt="Dado 3" />
+      <img src="./multimedia/dados/Mirage Purple.png" alt="Dado 3" />
+      <img src="./multimedia/dados/Rusted Bronze.jpg" alt="Dado 3" />
+      <img src="./multimedia/dados//Star River.jpg" alt="Dado 3" />
+      <!-- Agregá aquí más imágenes -->
+    </div>
+  </section>
+
+  <section class="section contacto" id="contacto">
+    <h2>¿Querés comprar?</h2>
+    <p>Contactanos por WhatsApp para concretar la compra o transferencia directa.</p>
+
+    <a href="https://wa.me/5493518073587" target="_blank" class="whatsapp">Hablar por WhatsApp</a>
+
+    <p style="margin-top:2rem">O completá este formulario para que te contactemos:</p>
+
+    <form id="formulario">
+      <input type="text" placeholder="Tu nombre" required />
+      <input type="email" placeholder="Tu email" />
+      <textarea placeholder="¿Qué productos te interesan?"></textarea>
+      <input type="submit" value="Enviar consulta" class="btn" />
+    </form>
   </section>
 
   <footer>
     <p>© 2025 El Bazar del Rogue - Todos los derechos reservados.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="gallery.js"></script>
   <script>
-    const dadosColors = {
-      color1: './multimedia/Mirage Purple.png',
-      color2: './multimedia/dados-rojo.png',
-      color3: './multimedia/dados-negro.png'
-    };
-    const dadosImg = document.getElementById('dados-img');
-    const dadosSelect = document.getElementById('dados-colores');
-    dadosSelect.addEventListener('change', () => {
-      dadosImg.src = dadosColors[dadosSelect.value];
+    document.getElementById('formulario').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert("¡Gracias por tu interés! Te contactaremos pronto.");
     });
   </script>
 </body>
