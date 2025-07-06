@@ -84,12 +84,30 @@ header p {
 }
 
 .product {
+  display: flex;
+  align-items: center;
   background-color: var(--bg-card);
   border: 1px solid #2c2c2c;
-  padding: 2rem;
   border-radius: 12px;
-  margin-bottom: 2rem;
   box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  margin-bottom: 2rem;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.product:hover {
+  transform: scale(1.01);
+}
+
+.product img {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  border-right: 1px solid #2c2c2c;
+}
+
+.product-content {
+  padding: 1.5rem;
 }
 
 .product h3 {
@@ -102,6 +120,8 @@ header p {
 .product p {
   color: var(--text-muted);
 }
+
+
 
 .contacto {
   background-color: #1a1a1a;
@@ -189,10 +209,23 @@ footer {
     padding: 2rem 1rem;
   }
 
+/* Responsive productos */
+@media (max-width: 768px) {
   .product {
-    padding: 1.5rem;
+    flex-direction: column;
+    text-align: center;
   }
 
+  .product img {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #2c2c2c;
+  }
+
+  .product-content {
+    padding: 1rem;
+  }
+}
   header img {
     max-width: 140px;
   }
