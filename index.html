@@ -18,14 +18,30 @@
 
   <section class="section">
     <h2>Productos destacados</h2>
-  
     <div class="product">
-      <img src="./multimedia/base.jpg" alt="Deckbox Vertical Premium">
+      <img src="./multimedia/deckbox.jpg" alt="Deckbox Vertical Premium">
       <div class="product-content">
         <h3>Deckbox Vertical Premium</h3>
-        <p>Diseño rígido, capacidad 100+ cartas enfundadas. Ideal para juego casual, torneos y colección.</p>
+        <p>Diseño rígido, capacidad 100+ cartas enfundadas. Ideal para torneos y colección.</p>
+        <button class="open-modal" data-modal="modal-deckbox">Ver más detalles</button>
       </div>
     </div>
+    
+    <!-- Modal Deckbox -->
+    <div id="modal-deckbox" class="modal">
+      <div class="modal-content">
+        <span class="close" data-modal="modal-deckbox">&times;</span>
+        <h2>Deckbox Vertical Premium</h2>
+        <p>Descripción más detallada del Deckbox con características, materiales, etc.</p>
+        <div class="modal-images">
+          <img src="./multimedia/deckbox-color1.jpg" alt="Deckbox color 1">
+          <img src="./multimedia/deckbox-color2.jpg" alt="Deckbox color 2">
+          <img src="./multimedia/deckbox-color3.jpg" alt="Deckbox color 3">
+        </div>
+        <p><strong>Colores disponibles:</strong> Negro, Rojo, Azul</p>
+      </div>
+    </div>
+    
   
     <div class="product">
       <img src="./multimedia/sleeves.png" alt="Fundas protectoras">
