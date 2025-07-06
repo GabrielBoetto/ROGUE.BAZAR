@@ -4,63 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>El Bazar del Rogue</title>
-  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet" />
   <link rel="icon" href="./multimedia/android-chrome-192x192.png" type="image/png" />
-  <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="Style.css" />
 </head>
 <body>
 
   <header>
-    <img src="./multimedia/el bazar del rogue 3.png" alt="El Bazar del Rogue">
+    <img src="./multimedia/el bazar del rogue 3.png" alt="El Bazar del Rogue" />
     <h1>El Bazar del Rogue</h1>
     <p>Tu tienda TCG & Rol en Argentina</p>
+
+    <nav class="menu">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="deckbox.html" class="nav-link">Deckbox</a>
+      <a href="fundas.html" class="nav-link">Fundas</a>
+      <a href="dados.html" class="nav-link">Dados</a>
+    </nav>
   </header>
 
   <section class="section">
     <h2>Productos destacados</h2>
+
     <div class="product">
-      <img src="./multimedia/moedelos.jpg" alt="Deckbox Vertical Premium">
-      <div class="product-content">
-        <h3>Deckbox Vertical Premium</h3>
-        <p>Diseño rígido, capacidad 100+ cartas enfundadas. Ideal para torneos y colección.</p>
-        <button class="open-modal" data-modal="modal-deckbox">Ver más detalles</button>
-      </div>
-    </div>
-    
-    <!-- Modal Deckbox -->
-    <div id="modal-deckbox" class="modal">
-      <div class="modal-content">
-        <span class="close" data-modal="modal-deckbox">&times;</span>
-        <h2>Deckbox Vertical Premium</h2>
-        <p>Descripción más detallada del Deckbox con características, materiales, etc.</p>
-        <div class="modal-images">
-          <img src="./multimedia/deckbox-color1.jpg" alt="Deckbox color 1">
-          <img src="./multimedia/deckbox-color2.jpg" alt="Deckbox color 2">
-          <img src="./multimedia/deckbox-color3.jpg" alt="Deckbox color 3">
+      <a href="deckbox.html" class="product-link" style="display:flex; align-items:center; color:inherit; text-decoration:none; width:100%;">
+        <img src="./multimedia/base.jpg" alt="Deckbox Vertical Premium" />
+        <div class="product-content">
+          <h3>Deckbox Vertical Premium</h3>
+          <p>Diseño rígido, capacidad 100+ cartas enfundadas. Ideal para juego casual, torneos y colección.</p>
         </div>
-        <p><strong>Colores disponibles:</strong> Negro, Rojo, Azul</p>
-      </div>
-    </div>
-    
-  
-    <div class="product">
-      <img src="./multimedia/sleeves.png" alt="Fundas protectoras">
-      <div class="product-content">
-        <h3>Fundas protectoras</h3>
-        <p>Calidad superior, protección a rayaduras, bordes reforzados. Tamaño estándar TCG.</p>
-      </div>
+      </a>
     </div>
   
     <div class="product">
-      <img src="./multimedia/Mirage Purple.png" alt="Set de Dados de Rol">
-      <div class="product-content">
-        <h3>Set de Dados de Rol</h3>
-        <p>D7 temático, ideal para D&D y otros sistemas. 7 unidades por set y guardado especial.</p>
-      </div>
+      <a href="fundas.html" class="product-link" style="display:flex; align-items:center; color:inherit; text-decoration:none; width:100%;">
+        <img src="./multimedia/sleeves.png" alt="Fundas protectoras" />
+        <div class="product-content">
+          <h3>Fundas protectoras</h3>
+          <p>Calidad superior, protección a rayaduras, bordes reforzados. Tamaño estándar TCG.</p>
+        </div>
+      </a>
+    </div>
+  
+    <div class="product">
+      <a href="dados.html" class="product-link" style="display:flex; align-items:center; color:inherit; text-decoration:none; width:100%;">
+        <img src="./multimedia/Mirage Purple.png" alt="Set de Dados de Rol" />
+        <div class="product-content">
+          <h3>Set de Dados de Rol</h3>
+          <p>D7 temático, ideal para D&D y otros sistemas. 7 unidades por set y guardado especial.</p>
+        </div>
+      </a>
     </div>
   </section>
   
-
   <section class="section contacto" id="contacto">
     <h2>¿Querés comprar?</h2>
     <p>Contactanos por WhatsApp para concretar la compra o transferencia directa.</p>
@@ -70,10 +66,10 @@
     <p style="margin-top:2rem">O completá este formulario para que te contactemos:</p>
 
     <form id="formulario">
-      <input type="text" placeholder="Tu nombre" required>
-      <input type="email" placeholder="Tu email">
+      <input type="text" placeholder="Tu nombre" required />
+      <input type="email" placeholder="Tu email" />
       <textarea placeholder="¿Qué productos te interesan?"></textarea>
-      <input type="submit" value="Enviar consulta" class="btn">
+      <input type="submit" value="Enviar consulta" class="btn" />
     </form>
   </section>
 

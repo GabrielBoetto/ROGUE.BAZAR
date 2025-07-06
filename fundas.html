@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fundas Protectores - El Bazar del Rogue</title>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet" />
+  <link rel="icon" href="./multimedia/android-chrome-192x192.png" type="image/png" />
+  <link rel="stylesheet" href="Style.css" />
+</head>
+<body>
+
+  <header>
+    <img src="./multimedia/el bazar del rogue 3.png" alt="El Bazar del Rogue" />
+    <h1>Fundas Protectores</h1>
+    <p>Tu tienda TCG & Rol en Argentina</p>
+
+    <nav class="menu">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="deckbox.html" class="nav-link">Deckbox</a>
+      <a href="fundas.html" class="nav-link">Fundas</a>
+      <a href="dados.html" class="nav-link">Dados</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h2>Fundas Protectores</h2>
+    <img id="fundas-img" src="./multimedia/sleeves.png" alt="Fundas protectoras" style="max-width:400px; width:100%; border-radius:12px; margin-bottom:1.5rem;" />
+
+    <p>Fundas de calidad superior, protección contra rayaduras y bordes reforzados. Tamaño estándar TCG para cuidar todas tus cartas durante el juego.</p>
+
+    <label for="fundas-colores" style="color: var(--accent); font-weight: bold; margin-top:1.5rem; display:block;">Elegí un color:</label>
+    <select id="fundas-colores" style="padding:0.6rem; border-radius:10px; border:none; background:#2c2c2c; color: var(--text-light); font-size:1rem; margin-bottom:2rem; width: max-content; cursor:pointer;">
+      <option value="color1" selected>Transparente</option>
+      <option value="color2">Mate</option>
+      <option value="color3">Negro</option>
+    </select>
+
+    <a href="index.html" class="btn">Volver al Inicio</a>
+  </section>
+
+  <footer>
+    <p>© 2025 El Bazar del Rogue - Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    const fundasColors = {
+      color1: './multimedia/sleeves.png',
+      color2: './multimedia/fundas-color2.jpg',
+      color3: './multimedia/fundas-color3.jpg'
+    };
+    const fundasImg = document.getElementById('fundas-img');
+    const fundasSelect = document.getElementById('fundas-colores');
+    fundasSelect.addEventListener('change', () => {
+      fundasImg.src = fundasColors[fundasSelect.value];
+    });
+  </script>
+</body>
+</html>

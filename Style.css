@@ -19,8 +19,9 @@ body {
 header {
   background: linear-gradient(to right, #1a1a1a, #101010);
   text-align: center;
-  padding: 3rem 1rem;
+  padding: 3rem 1rem 2rem 1rem;
   border-bottom: 1px solid #2c2c2c;
+  position: relative;
 }
 
 header img {
@@ -38,35 +39,32 @@ h1 {
 header p {
   color: var(--text-muted);
   font-size: 1.1rem;
+  margin-bottom: 1.2rem;
 }
 
-.hero {
-  background: url('https://www.transparenttextures.com/patterns/black-linen.png') repeat;
-  background-color: #141414;
-  padding: 4rem 1rem;
-  text-align: center;
+/* Navegación principal */
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
-.hero h2 {
-  font-size: 2rem;
+.menu .nav-link {
   color: var(--accent);
-  margin-bottom: 1.5rem;
-  font-family: 'MedievalSharp', cursive;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
-.btn {
-  padding: 1rem 2rem;
+.menu .nav-link:hover,
+.menu .nav-link:focus {
   background-color: var(--accent);
   color: #121212;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 12px;
-  transition: 0.3s ease;
-  display: inline-block;
-}
-
-.btn:hover {
-  background-color: #c4a850;
+  outline: none;
 }
 
 .section {
@@ -100,17 +98,16 @@ header p {
 }
 
 .product img {
-  width: 180px;
+  width: 200px;
   height: auto;
-  max-height: 180px;
   object-fit: cover;
   border-right: 1px solid #2c2c2c;
-  flex-shrink: 0;
+  border-radius: 0 12px 12px 0;
 }
-
 
 .product-content {
   padding: 1.5rem;
+  flex: 1;
 }
 
 .product h3 {
@@ -124,70 +121,7 @@ header p {
   color: var(--text-muted);
 }
 
-/* Modal base */
-.modal {
-  display: none; /* Oculto por defecto */
-  position: fixed;
-  z-index: 1000;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.75);
-  backdrop-filter: blur(5px);
-}
-
-.modal-content {
-  background-color: var(--bg-card);
-  margin: 5% auto;
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 800px;
-  color: var(--text-light);
-  position: relative;
-  box-shadow: 0 0 20px rgba(0,0,0,0.7);
-}
-
-.modal-content img {
-  width: 150px;
-  margin-right: 1rem;
-  border-radius: 8px;
-  border: 1px solid #444;
-  object-fit: cover;
-}
-
-.modal-images {
-  display: flex;
-  gap: 1rem;
-  margin: 1rem 0;
-  overflow-x: auto;
-}
-
-.close {
-  position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  font-size: 2rem;
-  font-weight: bold;
-  cursor: pointer;
-  color: var(--accent);
-}
-
-.open-modal {
-  margin-top: 1rem;
-  background-color: var(--accent);
-  color: #121212;
-  border: none;
-  padding: 0.7rem 1.5rem;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: 700;
-  transition: background 0.3s ease;
-}
-
-.open-modal:hover {
-  background-color: #c4a850;
-}
-
+/* Formulario y contacto */
 
 .contacto {
   background-color: #1a1a1a;
@@ -195,18 +129,21 @@ header p {
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  max-width: 700px;
+  margin: 3rem auto 6rem auto;
 }
 
-input, textarea {
+input, textarea, select {
   width: 100%;
   padding: 1rem;
-  margin: 0.5rem 0;
+  margin: 0.5rem 0 1.2rem 0;
   border-radius: 10px;
   border: none;
   background-color: #2c2c2c;
   color: var(--text-light);
   font-size: 1rem;
   font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
 }
 
 input::placeholder, textarea::placeholder {
@@ -218,17 +155,27 @@ textarea {
   min-height: 120px;
 }
 
-input[type="submit"] {
+input[type="submit"], .btn {
   background-color: var(--accent);
   color: #121212;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s ease;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.1rem;
+  user-select: none;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover, .btn:hover {
   background-color: #c4a850;
 }
+
+/* WhatsApp button */
 
 .whatsapp {
   margin-top: 1rem;
@@ -240,11 +187,14 @@ input[type="submit"]:hover {
   text-decoration: none;
   font-weight: bold;
   transition: background 0.3s ease;
+  user-select: none;
 }
 
 .whatsapp:hover {
   background-color: #1ebe58;
 }
+
+/* Footer */
 
 footer {
   text-align: center;
@@ -255,28 +205,22 @@ footer {
   border-top: 1px solid #2c2c2c;
 }
 
+/* Select styling for product variant dropdowns */
+select {
+  max-width: 250px;
+}
+
+/* Responsive */
+
 @media (max-width: 768px) {
   h1 {
     font-size: 1.7rem;
-  }
-
-  .hero h2 {
-    font-size: 1.5rem;
-    padding: 0 1rem;
-  }
-
-  .btn, input[type="submit"] {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1rem;
   }
 
   .section, .contacto {
     padding: 2rem 1rem;
   }
 
-/* Responsive productos */
-@media (max-width: 768px) {
   .product {
     flex-direction: column;
     text-align: center;
@@ -286,12 +230,13 @@ footer {
     width: 100%;
     border-right: none;
     border-bottom: 1px solid #2c2c2c;
+    border-radius: 12px 12px 0 0;
   }
 
   .product-content {
     padding: 1rem;
   }
-}
+
   header img {
     max-width: 140px;
   }
@@ -302,8 +247,17 @@ footer {
     padding: 1rem;
   }
 
-  input, textarea {
+  input, textarea, select {
     font-size: 0.95rem;
     padding: 0.9rem;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .menu .nav-link {
+    font-size: 1rem;
   }
 }
