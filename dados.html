@@ -62,29 +62,8 @@ Cada turno abre nuevas posibilidades, haciendo que cada juego sea más emocionan
     <p>© 2025 El Bazar del Rogue - Todos los derechos reservados.</p>
   </footer>
 
-  <script>
-    // Formulario - alerta demo
-    document.getElementById('formulario').addEventListener('submit', function (e) {
-      e.preventDefault();
-      alert("¡Gracias por tu interés! Te contactaremos pronto.");
-    });
+  <script src="script.js"></script>
 
-    // Galería: cambiar imagen principal
-    const imgMain = document.getElementById('img-main');
-    const gallery = document.getElementById('gallery');
-    const thumbnails = gallery.querySelectorAll('img');
-
-    thumbnails.forEach((thumb) => {
-      thumb.addEventListener('click', () => {
-        imgMain.src = thumb.src;
-
-        // Quitar clase active de todos
-        thumbnails.forEach(t => t.classList.remove('active'));
-        // Agregar clase active al clickeado
-        thumb.classList.add('active');
-      });
-    });
-  </script>
 
 </body>
 </html>

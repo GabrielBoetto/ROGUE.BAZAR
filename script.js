@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ----- FORMULARIO -----
+  // FORMULARIO (si existe)
   const form = document.getElementById('formulario');
   if (form) {
     form.addEventListener('submit', function (e) {
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ----- CAMBIO DE IMAGEN SEGÚN SELECT (para páginas con variantes de color) -----
+  // SELECT de colores (si existe)
   const colorSelect = document.getElementById('color-select');
   const productImage = document.getElementById('product-image');
 
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ----- GALERÍA PRINCIPAL -----
+  // GALERÍA: cambia imagen principal al hacer click en miniaturas
   const imgMain = document.getElementById('img-main');
   const gallery = document.getElementById('gallery');
 
@@ -29,44 +29,16 @@ document.addEventListener("DOMContentLoaded", () => {
     thumbnails.forEach((thumb) => {
       thumb.style.cursor = 'pointer';
       thumb.addEventListener('click', () => {
-        // Animación fade (opcional)
         imgMain.classList.add("fade");
         imgMain.src = thumb.src;
+
         setTimeout(() => {
           imgMain.classList.remove("fade");
-        }, 300);
+        }, 200);
 
-        // Cambiar imagen activa
         thumbnails.forEach((t) => t.classList.remove('active'));
         thumb.classList.add('active');
       });
-    }
-
-    );
-
-    // Marcar primera como activa si ninguna lo está
-    const active = gallery.querySelector('.active');
-    if (!active && thumbnails.length > 0) {
-      thumbnails[0].classList.add('active');
-    }
-  }
-
-  // ----- LIGHTBOX (si existe) -----
-  const lightboxOverlay = document.getElementById('lightbox-overlay');
-  const lightboxImage = lightboxOverlay?.querySelector('img');
-
-  if (lightboxOverlay && lightboxImage && gallery) {
-    const thumbnails = gallery.querySelectorAll('img');
-    thumbnails.forEach((img) => {
-      img.addEventListener('click', () => {
-        lightboxImage.src = img.src;
-        lightboxOverlay.style.display = 'flex';
-      });
-    });
-
-    lightboxOverlay.addEventListener('click', () => {
-      lightboxOverlay.style.display = 'none';
-      lightboxImage.src = '';
     });
   }
 });
