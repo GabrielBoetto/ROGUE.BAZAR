@@ -41,3 +41,33 @@ lightboxOverlay.addEventListener('click', () => {
 if (galleryImages.length > 0) {
   galleryImages[0].classList.add('active');
 }
+document.addEventListener("DOMContentLoaded", () => {
+  // ----- GALERÍA DE IMÁGENES (si existe) -----
+  const imgMain = document.getElementById("img-main");
+  const gallery = document.getElementById("gallery");
+
+  if (imgMain && gallery) {
+    const thumbnails = gallery.querySelectorAll("img");
+
+    thumbnails.forEach((thumb) => {
+      thumb.addEventListener("click", () => {
+        imgMain.src = thumb.src;
+
+        // Quitar clase active de todos
+        thumbnails.forEach((t) => t.classList.remove("active"));
+
+        // Agregar clase active al clickeado
+        thumb.classList.add("active");
+      });
+    });
+  }
+
+  // ----- FORMULARIO DEMO (si existe) -----
+  const form = document.getElementById("formulario");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("¡Gracias por tu interés! Te contactaremos pronto.");
+    });
+  }
+});
