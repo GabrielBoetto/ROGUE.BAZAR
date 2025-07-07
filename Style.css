@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Montserrat:wght@400;600&display=swap');
 
+/* Reset universal para evitar desbordes por padding */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 :root {
   --bg-dark: #111111;
   --bg-card: #1b1b1b;
@@ -14,6 +19,7 @@ body {
   color: var(--text-light);
   font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 header {
@@ -142,7 +148,6 @@ input, textarea, select {
   color: var(--text-light);
   font-size: 1rem;
   font-family: 'Montserrat', sans-serif;
-  box-sizing: border-box;
 }
 
 input::placeholder, textarea::placeholder {
@@ -188,10 +193,6 @@ input[type="submit"]:hover, .btn:hover {
   user-select: none;
 }
 
-.whatsapp:hover {
-  background-color: #1ebe58;
-}
-
 /* Footer */
 footer {
   text-align: center;
@@ -200,11 +201,6 @@ footer {
   color: #666;
   font-size: 0.9rem;
   border-top: 1px solid #2c2c2c;
-}
-
-/* Select styling for product variant dropdowns */
-select {
-  max-width: 250px;
 }
 
 /* Product description */
@@ -217,7 +213,7 @@ select {
   margin-right: auto;
 }
 
-/* Imagen principal de producto (galería) */
+/* Imagen principal */
 .img-main {
   width: 100%;
   max-width: 600px;
@@ -225,9 +221,14 @@ select {
   border-radius: 12px;
   margin: 1rem auto 0 auto;
   display: block;
+  transition: opacity 0.3s ease;
 }
 
-/* Contenedor de miniaturas (galería) */
+.img-main.fade {
+  opacity: 0.3;
+}
+
+/* Galería */
 .gallery-container {
   margin-top: 1rem;
   display: flex;
@@ -237,9 +238,8 @@ select {
   border-bottom: 2px solid var(--accent);
 }
 
-/* Miniaturas */
 .gallery-container img {
-  width: 120px;
+  width: 150px;
   height: auto;
   cursor: pointer;
   border-radius: 8px;
@@ -249,7 +249,29 @@ select {
 }
 
 .gallery-container img.active {
-  border-color: #f0c75e; /* color destacado para imagen activa */
+  border-color: #f0c75e;
+}
+
+/* Lightbox */
+#lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#lightbox-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #f0c75e;
+  cursor: zoom-out;
 }
 
 /* Responsive */
@@ -285,7 +307,8 @@ select {
   .whatsapp {
     width: 100%;
     font-size: 1rem;
-    padding: 1rem;
+    padding: 1rem 0.8rem;
+    box-sizing: border-box;
   }
 
   input, textarea, select {
@@ -302,7 +325,6 @@ select {
     font-size: 1rem;
   }
 
-  /* Galería miniaturas más pequeñas en móviles */
   .gallery-container img {
     width: 80px;
   }
@@ -310,49 +332,4 @@ select {
   .img-main {
     max-width: 100%;
   }
-}
-.gallery-container img {
-  width: 150px; /* un poco más grandes */
-  height: auto;
-  cursor: pointer;
-  border-radius: 8px;
-  border: 2px solid var(--accent);
-  flex-shrink: 0;
-  transition: border-color 0.3s;
-}
-
-.gallery-container img.active {
-  border-color: #f0c75e; /* color para imagen activa */
-}
-
-/* Lightbox overlay */
-#lightbox-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.8);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-#lightbox-overlay img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 12px;
-  box-shadow: 0 0 20px #f0c75e;
-  cursor: zoom-out;
-}
-.img-main {
-  transition: opacity 0.3s ease;
-}
-
-.img-main.fade {
-  opacity: 0.3;
-}
-body {
-  overflow-x: hidden;
 }
