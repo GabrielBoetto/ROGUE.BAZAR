@@ -333,3 +333,23 @@ footer {
     max-width: 100%;
   }
 }
+.video-demo {
+  max-width: 600px;  /* Máximo ancho que ocupa el contenedor del video */
+  margin: 0 auto 2rem auto; /* Centra y margen inferior */
+}
+
+.video-producto {
+  width: 100%;   /* Ocupa todo el ancho del contenedor (máx 600px) */
+  height: auto;  /* Mantiene proporción original */
+  border-radius: 12px; /* Opcional: bordes redondeados para que combine */
+  box-shadow: 0 0 15px rgba(227, 199, 123, 0.5); /* Opcional: sombra para darle estilo */
+  display: block;  /* Para evitar espacios indeseados debajo */
+}
+
+/* Responsive: para pantallas pequeñas, que el video ocupe casi todo el ancho */
+@media (max-width: 768px) {
+  .video-demo {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+}
