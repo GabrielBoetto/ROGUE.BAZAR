@@ -334,22 +334,25 @@ footer {
   }
 }
 .video-demo {
-  max-width: 600px;  /* Máximo ancho que ocupa el contenedor del video */
-  margin: 0 auto 2rem auto; /* Centra y margen inferior */
+  max-width: 600px;
+  margin: 0 auto 2rem auto; /* Centra horizontalmente y agrega espacio abajo */
+  text-align: center;       /* Centra el título si lo tiene */
 }
 
 .video-producto {
-  width: 100%;   /* Ocupa todo el ancho del contenedor (máx 600px) */
-  height: auto;  /* Mantiene proporción original */
-  border-radius: 12px; /* Opcional: bordes redondeados para que combine */
-  box-shadow: 0 0 15px rgba(227, 199, 123, 0.5); /* Opcional: sombra para darle estilo */
-  display: block;  /* Para evitar espacios indeseados debajo */
+  width: 100%;
+  height: auto;
+  display: block;           /* Esto elimina espacios blancos indeseados */
+  margin: 0 auto;           /* Esto asegura el centrado del video */
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(227, 199, 123, 0.5);
 }
 
-/* Responsive: para pantallas pequeñas, que el video ocupe casi todo el ancho */
+/* Responsive */
 @media (max-width: 768px) {
   .video-demo {
     max-width: 100%;
     padding: 0 1rem;
   }
 }
+
