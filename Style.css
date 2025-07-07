@@ -346,3 +346,10 @@ select {
   box-shadow: 0 0 20px #f0c75e;
   cursor: zoom-out;
 }
+.img-main {
+  transition: opacity 0.3s ease;
+}
+
+.img-main.fade {
+  opacity: 0.3;
+}

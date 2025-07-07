@@ -71,3 +71,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+thumb.addEventListener("click", () => {
+  imgMain.classList.add("fade");
+
+  // Cambiar imagen
+  imgMain.src = thumb.src;
+
+  // Quitar clase 'fade' luego de un pequeño delay
+  setTimeout(() => {
+    imgMain.classList.remove("fade");
+  }, 300);
+
+  // Resto del código...
+});
