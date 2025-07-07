@@ -353,3 +353,6 @@ select {
 .img-main.fade {
   opacity: 0.3;
 }
+body {
+  overflow-x: hidden;
+}
